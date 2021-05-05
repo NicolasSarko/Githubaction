@@ -23,7 +23,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag nicolassarko/Githubaction:$(date +%s)
     - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}/github-actions
+      run: docker push ${{secrets.DOCKER_USER}}/repodevops
       
     - name: Get latest tag
       id: latest_tag
