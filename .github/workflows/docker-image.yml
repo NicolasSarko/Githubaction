@@ -23,5 +23,5 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file action-a/Dockerfile --tag nicolassarko/repodevops:$(cat /proc/sys/kernel/random/uuid) 
     - name: Docker Push
-      run: docker push ${{secrets.DOCKERHUB_USERNAME}}/repodevops:$(cat /proc/sys/kernel/random/uuid) 
+      run: docker push ${{secrets.DOCKERHUB_USERNAME}}/repodevops
     
