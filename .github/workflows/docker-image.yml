@@ -24,15 +24,4 @@ jobs:
       run: docker build . --file action-a/Dockerfile --tag nicolassarko/repodevops:$(date +%s)
     - name: Docker Push
       run: docker push ${{secrets.DOCKER_USER}}/repodevops
-      
-    - name: Get latest tag
-      id: latest_tag
-      uses: jacobtomlinson/gha-get-docker-hub-tags@0.1.1
-      with:
-        org: 'nicolassarko'  # Docker Hub user or organisation name
-        repo: 'repodevops'  # Docker Hub repository name
-
-    # Optionally check the tag we got back
-    - name: Check outputs
-      run: |
-        echo "Latest Image Tag - ${{ steps.latest_tag.outputs.tag }}"
+    
