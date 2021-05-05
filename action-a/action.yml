@@ -1,3 +1,16 @@
 - name: Build and push Docker images
   uses: docker/build-push-action@v2.4.0
 
+inputs:
+  MY_NAME:
+    description: " "
+    required: true
+    default: " "
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "mic"
+  color: "purple"
