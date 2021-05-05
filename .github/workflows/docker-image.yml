@@ -1,8 +1,5 @@
 name: Docker Image CI
-env:
-          tag: $(date +%s)
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+
 on:
   push:
     branches: [ main ]
@@ -15,7 +12,10 @@ jobs:
   
 
     runs-on: ubuntu-latest
-
+    env:
+          tag: ${{ env.tag }}
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - name: Login to Docker Hub
