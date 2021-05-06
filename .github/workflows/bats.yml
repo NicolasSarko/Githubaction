@@ -17,8 +17,11 @@ jobs:
       - name : ls
         run : ls
         
+      - name : cd
+        run : cd action-a
+        
       - name: Permissions
         run : chmod -r 777
 
       - name: Test
-        run: bats action-a/test.sh 
+        run: bats test.sh 
