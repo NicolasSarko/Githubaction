@@ -13,9 +13,9 @@ jobs:
 
       - name: Check out code
         uses: actions/checkout@v1
-        
-      - name: Give permissions
-        run : cd action-a/test.sh
+      
+      - name : ls
+        run : ls
         
       - name: Permissions
         run : chmod -r 777
