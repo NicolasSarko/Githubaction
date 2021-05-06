@@ -13,15 +13,10 @@ jobs:
 
       - name: Check out code
         uses: actions/checkout@v1
-      
-      - name : ls
-        run : ls
-        
-      - name : cd
-        run : cd action-a
+
         
       - name: Permissions
-        run : chmod -r 777
+        run : chmod 777 action-a
 
       - name: Test
-        run: bats test.sh 
+        run: bats action-a/test.sh 
