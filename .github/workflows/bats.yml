@@ -16,7 +16,10 @@ jobs:
 
         
       - name: Permissions
-        run : chmod 777 action-a
+        run : chmod 777 action-a/entrypoint.sh
+        
+      - name: Permissions test
+        run : chmod 777 action-a/test.sh
 
       - name: Test
         run: bats action-a/test.sh 
