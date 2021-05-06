@@ -15,4 +15,4 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Test
-        run: bats Githubaction/action-a/test.sh 
+        run: bats /action-a/test.sh
